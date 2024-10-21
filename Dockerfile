@@ -27,7 +27,7 @@ RUN set -eux; \
     export NAIVE_FILE="naiveproxy-${VERSION}-${ARCH}"; \
     \
     echo "Downloading compressed release file..."; \
-    wget -O /root/naive.tar.xz https://github.com/0xf00f00/naiveproxy/releases/download/${VERSION}/${NAIVE_FILE}.tar.xz > /dev/null 2>&1; \
+    wget -O /root/naive.tar.xz https://github.com/klzgrad/naiveproxy/releases/download/${VERSION}/${NAIVE_FILE}.tar.xz > /dev/null 2>&1; \
     if [ ! -f /root/naive.tar.xz ]; then \
         echo "Error: Failed to download compressed release file!"; exit 1; \
     fi; \
