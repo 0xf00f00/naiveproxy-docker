@@ -35,8 +35,8 @@ jobs:
           build-args: |
             VERSION=${{ github.ref_name }}
           tags: |
-            ghcr.io/${{ github.actor }}/naive:latest
-            ghcr.io/${{ github.actor }}/naive:${{ github.ref_name }}
+            ghcr.io/${{ github.actor }}/naive_proxy:latest
+            ghcr.io/${{ github.actor }}/naive_proxy:${{ github.ref_name }}
   test-docker-image:
      needs: [push-docker-image]
      runs-on: ubuntu-22.04
@@ -47,5 +47,5 @@ jobs:
       - 
         name: Test Docker image
         run: |
-          docker run --rm --entrypoint /usr/bin/naive ghcr.io/${{ github.actor }}/naiveproxy:latest --version
-          docker run --rm --entrypoint /usr/bin/naive ghcr.io/${{ github.actor }}/naiveproxy:${{ github.ref_name }} --version
+          docker run --rm --entrypoint /usr/bin/naive ghcr.io/${{ github.actor }}/naive_proxy:latest --version
+          docker run --rm --entrypoint /usr/bin/naive ghcr.io/${{ github.actor }}/naive_proxy:${{ github.ref_name }} --version
